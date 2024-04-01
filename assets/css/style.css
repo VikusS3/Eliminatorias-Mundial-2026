@@ -201,6 +201,24 @@ main {
   color: #ffd6a5;
 }
 
+/*seccion resultados*/
+.resultado{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.proximos_partidos{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+}
+
 footer {
   display: flex;
   justify-content: center;
