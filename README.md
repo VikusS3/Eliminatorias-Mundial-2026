@@ -14,3 +14,8 @@ Visualización de resultados de partidos en tiempo real.
 Clasificaciones actualizadas de los equipos participantes.
 Detalles de los próximos partidos y horarios.
 Interfaz de usuario intuitiva y fácil de usar.
+
+## TODO
+
+ [] Conseguir una api para las banderas de los paises
+ [] Conseguir que guarde el estado de donde se queda el usuario en la jornada

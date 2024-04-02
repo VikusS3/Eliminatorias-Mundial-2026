@@ -80,7 +80,9 @@
         <span class="gradiante__canada"> CANADA</span>
       </h1>
       <div class="botones">
-        <button class="button button-active" id="btnClasificacion">Clasificiacion</button>
+        <button class="button button-active" id="btnClasificacion">
+          Clasificiacion
+        </button>
         <button class="button" id="btnResultados">Resultados</button>
         <button class="button" id="btnPartidos">Prox.Partidos</button>
       </div>
@@ -104,8 +106,24 @@
       </section>
 
       <section class="resultado" id="id_resultados">
-        Resultados
+        <div class="jornadas">
+          <button class="jornadas_button active" id="btnLastJornada">
+            <span id="jornada_number_1"></span>
+          </button>
+          <button class="jornadas_button" id="btnPenulJornada">
+            <span id="jornada_number_2"></span>
+          </button>
+          <button class="jornadas_button" id="btnAnteJornada">
+            <span id="jornada_number_3"></span>
+          </button>
+          <button class="jornadas_button" id="btnFirstJornada">
+            <span id="jornada_number_4"></span>
+          </button>
+        </div>
+
+        <div class="jornada_partido" id="jornada_partido"></div>
       </section>
+
       <section class="proximos_partidos" id="id_proximos_partidos">
         Partidos
       </section>
