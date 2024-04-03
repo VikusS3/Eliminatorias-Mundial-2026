@@ -17,5 +17,5 @@ Interfaz de usuario intuitiva y fácil de usar.
 
 ## TODO
 
- [] Conseguir una api para las banderas de los paises
+ [x] Conseguir una api para las banderas de los paises
  [] Conseguir que guarde el estado de donde se queda el usuario en la jornada
