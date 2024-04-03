@@ -218,7 +218,7 @@ function displayMatches(jornada) {
 
     // Create flag for second team
     const flag2 = document.createElement("img");
-    flag2.src = `assets/public/${partido.second_team.country}.png`;
+    flag2.src = `./assets/public/${partido.second_team.country}.png`;
     flag2.alt = partido.second_team.country + " flag";
     flag2.classList.add("flag");
 
