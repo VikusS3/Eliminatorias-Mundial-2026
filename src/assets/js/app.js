@@ -196,7 +196,7 @@ function displayMatches(jornada) {
 
     // Create flag for first team
     const flag1 = document.createElement("img");
-    flag1.src = `assets/public/${partido.first_team.country}.png`;
+    flag1.src = `assets/public/${partido.first_team.country.toLowerCase()}.png`;
     flag1.alt = partido.first_team.country + " flag";
     flag1.classList.add("flag");
 
@@ -218,7 +218,7 @@ function displayMatches(jornada) {
 
     // Create flag for second team
     const flag2 = document.createElement("img");
-    flag2.src = `./assets/public/${partido.second_team.country}.png`;
+    flag2.src = `./assets/public/${partido.second_team.country.toLowerCase()}.png`;
     flag2.alt = partido.second_team.country + " flag";
     flag2.classList.add("flag");
 
@@ -307,7 +307,7 @@ function displayMatchesProx(jornada) {
     team1Img.className = "team_info_img";
 
     const team1Flag = document.createElement("img");
-    team1Flag.src = `assets/public/${partido.first_team}.png`;
+    team1Flag.src = `assets/public/${partido.first_team.toLowerCase()}.png`;
     team1Flag.alt = `Bandera de ${partido.first_team}`;
 
     const teamContentName = document.createElement("div");
@@ -329,7 +329,7 @@ function displayMatchesProx(jornada) {
     team2Img.className = "team_info_img";
 
     const team2Flag = document.createElement("img");
-    team2Flag.src = `assets/public/${partido.second_team}.png`;
+    team2Flag.src = `assets/public/${partido.second_team.toLowerCase()}.png`;
     team2Flag.alt = `Bandera de ${partido.second_team}`;
 
     const teamContentName2 = document.createElement("div");
