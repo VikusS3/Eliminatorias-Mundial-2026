@@ -17,7 +17,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 15px;
+  padding: 15px 15px;
   border-bottom: 2px solid #f6f6f6;
   background-color: #08080a;
   min-width: 100%;
@@ -212,6 +212,7 @@ main {
   align-items: center;
   gap: 15px;
   min-width: 100%;
+  min-height: 100vh;
 }
 
 .jornadas{
@@ -219,7 +220,10 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   border-radius: 15px;
+  width: 100%;
+
 }
 
 .jornadas_button{
@@ -265,11 +269,16 @@ main {
   align-items: center;
   gap: 15px;
   background-color: #1b1b1b;
-  box-shadow: 0 0 20px 1px #1d2c3f;
+  box-shadow: 0 0 20px 1px #6d6d6d;
   border-radius: 15px;
   padding: 15px;
   min-width: 300px;
   margin-top: 35px;
+  transition: 0.3s ease-in-out;
+}
+
+.partido:hover{
+  transform: scale(1.1);
 }
 
 .encuentro{
@@ -302,8 +311,68 @@ main {
   justify-content: center;
   align-items: center;
   gap: 15px;
-
+  min-width: 100%;
+  min-height: 100vh;  
 }
+
+.proximos_encuentros{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  margin-top: 26px;
+}
+
+.proximo_encuentro{
+  background-color: #1b1b1b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  gap: 40px;
+  margin-top: 45px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 1px #6d6d6d;
+  transition: 0.3s ease-in-out;
+  min-width: 300px;
+}
+
+.proximo_encuentro:hover{
+  transform: scale(1.1);
+}
+
+.proximo_encuentro_info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.team_info{
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.team_content_name{
+  text-align: center;
+}
+
+.team_info img{
+  width: 50px;
+  height: 50px;
+}
+
+.proximo_encuentro_fecha p{
+ font-weight: bold;
+}
+
+
 
 footer {
   display: flex;
@@ -323,6 +392,11 @@ footer a {
   width: 30px;
   height: 30px;
   fill: #f6f6f6;
+  transition: 0.3s ease-in-out;
+}
+
+.github-icon:hover{
+  transform: scale(1.2);
 }
 
 /** media querys**/
