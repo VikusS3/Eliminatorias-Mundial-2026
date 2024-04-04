@@ -33,20 +33,23 @@
   </head>
 
   <body>
-    <header class="header">
+    <header class="header" id="header">
       <div class="header__title">
         <h2>
           Conmebol Clasificatorias <span class="h2__span">Mundial 2026</span>
         </h2>
       </div>
-
+  
       <nav class="navbar">
+       
         <ul class="lista">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="#">Goleadores</a></li>
-          <li><a href="#">Equipos</a></li>
-          <li><a href="#">Noticias</a></li>
+          <li><a href="index.html" aria-label="Ir a Inicio">Inicio</a></li>
+          <li><a href="pages/goleadores.html" aria-label="Ir a Goleadores">Goleadores</a></li>
+          <li><a href="pages/acerca.html" aria-label="Ir a Acerca de">Acerca de</a></li>
+          <li><a href="pages/noticias.html" aria-label="Ir a Noticias">Noticias</a></li>
         </ul>
+        
+        </div>
       </nav>
       <div class="menuBtnOpen">
         <svg
@@ -84,7 +87,6 @@
           <path d="M18 6l-12 12" />
           <path d="M6 6l12 12" />
         </svg>
-      </div>
     </header>
     <main>
       <h1 class="main__title">
@@ -155,8 +157,9 @@
     </main>
 
     <footer>
-      <p>Desarrollado por SaulDev</p>
-      <a href="https://github.com/VikusS3" target="_blank" rel="noopener"
+      <div class="footer__content">
+        <p>Desarrollado por SaulDev</p>
+      <a href="https://github.com/VikusS3/Eliminatorias-Mundial-2026" target="_blank" rel="noopener"
         ><svg
           class="github-icon"
           viewBox="0 0 256 250"
@@ -171,7 +174,16 @@
           />
         </svg>
       </a>
+      </div>
+      
+      <div class="arrow-up">
+        <a href="#header">
+          <svg  xmlns="http://www.w3.org/2000/svg"  width="30"  height="30"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-square-arrow-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 12l-4 -4l-4 4" /><path d="M12 16v-8" /><path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /></svg>
+        </a>
+       
+      </div>
     </footer>
+    <script src="assets/js/dom.js"></script>
     <script src="assets/js/app.js"></script>
   </body>
 </html>

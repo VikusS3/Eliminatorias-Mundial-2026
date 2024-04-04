@@ -2,6 +2,13 @@ const classification = "https://conmebol-api.vercel.app/api/classification";
 const results = "https://conmebol-api.vercel.app/api/results";
 const matches = "https://conmebol-api.vercel.app/api/matches";
 
+document.addEventListener('DOMContentLoaded', (event) => {
+  getResults();
+  getClassification();
+  getPartidos();
+});
+
+
 const arrows = {
   up: getArrowSvg("green", "arrow-badge-up", "M17 11v6l-5-4-5 4v-6l5-4z"),
   down: getArrowSvg("red", "arrow-badge-down", "M17 13V7l-5 4-5-4v6l5 4z"),
@@ -11,8 +18,6 @@ const arrows = {
     "M11 16h10M11 16l4 4M11 16l4-4M13 8H3M13 8l-4 4M13 8 9 4"
   ),
 };
-
-// const sections = ["id_clasificacion", "id_resultados", "id_proximos_partidos"];
 
 const btns = [
   "btnLastJornada",
@@ -45,14 +50,15 @@ function getArrowSvg(color, badge, path) {
     <path d="M0 0h24v24H0z" stroke="none"/> <path d="${path}"/></svg>`;
 }
 
-const buttons = [ "btnClasificacion","btnResultados","btnPartidos"];
+const buttons = ["btnClasificacion", "btnResultados", "btnPartidos"];
 const sections = ["id_clasificacion", "id_resultados", "id_proximos_partidos"];
-const functions = [getClassification,getResults,getPartidos];
+const functions = [getClassification, getResults, getPartidos];
 
 buttons.forEach((button, index) => {
   document.getElementById(button).addEventListener("click", () => {
     sections.forEach((section, i) => {
-      document.getElementById(section).style.display = i === index ? "block" : "none";
+      document.getElementById(section).style.display =
+        i === index ? "block" : "none";
     });
 
     buttons.forEach((btn, i) => {
@@ -64,6 +70,13 @@ buttons.forEach((button, index) => {
       }
     });
 
+    [btns, btnsProxJornada].forEach(btnGroup => {
+      btnGroup.forEach((btn, i) => {
+        const element = document.getElementById(btn);
+        element.classList[i === 0 ? 'add' : 'remove']("active");
+      });
+    });
+
     functions[index]();
   });
 });
@@ -73,20 +86,6 @@ async function getClassification() {
     const response = await fetch(classification);
     const data = await response.json();
     fillTable(data.results);
-    setTimeout(() => {
-      const buttons = [
-        "btnLastJornada",
-        "btnPenulJornada",
-        "btnAnteJornada",
-        "btnFirstJornada",
-      ];
-      buttons.forEach((btn, index) => {
-        const button = document.getElementById(btn);
-        index === 0
-          ? button.classList.add("active")
-          : button.classList.remove("active");
-      });
-    }, 525);
   } catch (error) {
     console.log(error);
   }
@@ -196,6 +195,7 @@ function displayMatches(jornada) {
 
     // Create flag for first team
     const flag1 = document.createElement("img");
+    flag1.loading = "lazy";
     flag1.src = `assets/public/${partido.first_team.country.toLowerCase()}.png`;
     flag1.alt = partido.first_team.country + " flag";
     flag1.classList.add("flag");
@@ -218,6 +218,7 @@ function displayMatches(jornada) {
 
     // Create flag for second team
     const flag2 = document.createElement("img");
+    flag2.loading = "lazy";
     flag2.src = `./assets/public/${partido.second_team.country.toLowerCase()}.png`;
     flag2.alt = partido.second_team.country + " flag";
     flag2.classList.add("flag");
@@ -266,21 +267,6 @@ async function getPartidos() {
     });
 
     displayMatchesProx(data[prox_jornadas[0]]);
-
-    setTimeout(() => {
-      const buttons = [
-        "btnLastJornada",
-        "btnPenulJornada",
-        "btnAnteJornada",
-        "btnFirstJornada",
-      ];
-      buttons.forEach((btn, index) => {
-        const button = document.getElementById(btn);
-        index === 0
-          ? button.classList.add("active")
-          : button.classList.remove("active");
-      });
-    }, 524);
   } catch (error) {
     console.log(error);
   }
@@ -307,6 +293,7 @@ function displayMatchesProx(jornada) {
     team1Img.className = "team_info_img";
 
     const team1Flag = document.createElement("img");
+    team1Flag.loading = "lazy";
     team1Flag.src = `assets/public/${partido.first_team.toLowerCase()}.png`;
     team1Flag.alt = `Bandera de ${partido.first_team}`;
 
@@ -329,6 +316,7 @@ function displayMatchesProx(jornada) {
     team2Img.className = "team_info_img";
 
     const team2Flag = document.createElement("img");
+    team2Flag.loading = "lazy";
     team2Flag.src = `assets/public/${partido.second_team.toLowerCase()}.png`;
     team2Flag.alt = `Bandera de ${partido.second_team}`;
 
@@ -365,6 +353,3 @@ function displayMatchesProx(jornada) {
   });
 }
 
-getClassification();
-getResults();
-getPartidos();

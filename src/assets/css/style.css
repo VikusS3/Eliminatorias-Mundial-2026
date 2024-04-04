@@ -16,6 +16,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 .header {
@@ -26,7 +27,7 @@ body {
   padding: 15px 15px;
   border-bottom: 2px solid #f6f6f6;
   background-color: #08080a;
-  min-width: 100%;
+  min-width: 100vw;
 }
 
 .navbar {
@@ -53,7 +54,7 @@ body {
   gap: 50px;
 }
 
-.lista ul{
+.lista ul {
   padding: 0;
 }
 
@@ -123,7 +124,7 @@ main {
 }
 
 .button {
-  background-color: #888888;
+  background-color: #d6d6d6;
   border: none;
   color: #3b3b3b;
   height: 50px;
@@ -140,7 +141,6 @@ main {
   color: #000000;
   animation: 0.3s ease-in-out;
   transform: scale(1.1);
-  cursor: not-allowed; /* proximamente este apartado*/
 }
 
 .button-active {
@@ -167,6 +167,7 @@ main {
   line-height: 1.25rem;
   text-align: left;
   color: #ffffff;
+  margin-bottom: 50px;
 }
 
 .secction__table thead {
@@ -206,7 +207,7 @@ main {
 }
 
 /*seccion resultados*/
-.resultado{
+.resultado {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -216,7 +217,7 @@ main {
   min-height: 100vh;
 }
 
-.jornadas{
+.jornadas {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -224,10 +225,9 @@ main {
   flex-wrap: wrap;
   border-radius: 15px;
   width: 100%;
-
 }
 
-.jornadas_button{
+.jornadas_button {
   background-color: #f6f6f6;
   border: 1px solid #08080a;
   color: #3b3b3b;
@@ -238,21 +238,21 @@ main {
   text-decoration: none;
 }
 
-.jornadas_button:nth-child(1){
+.jornadas_button:nth-child(1) {
   border-radius: 15px 0 0 15px;
 }
 
-.jornadas_button:last-child{
+.jornadas_button:last-child {
   border-radius: 0 15px 15px 0;
 }
 
-.active{
+.active {
   background-color: #c0c0c0;
   color: #000;
   transform: scale(1.1);
 }
 
-.jornada_partido{
+.jornada_partido {
   margin-top: 26px;
   min-width: 100%;
   display: flex;
@@ -263,7 +263,7 @@ main {
   margin-bottom: 26px;
 }
 
-.partido{
+.partido {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -278,11 +278,11 @@ main {
   transition: 0.3s ease-in-out;
 }
 
-.partido:hover{
+.partido:hover {
   transform: scale(1.1);
 }
 
-.encuentro{
+.encuentro {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -292,7 +292,7 @@ main {
   margin: 16px;
 }
 
-.goles{
+.goles {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -300,23 +300,22 @@ main {
   gap: 15px;
 }
 
-.fecha  span{
+.fecha span {
   color: #f6f6f6;
   font-weight: bold;
 }
 
-
-.proximos_partidos{
+.proximos_partidos {
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 15px;
   min-width: 100%;
-  min-height: 100vh;  
+  min-height: 100vh;
 }
 
-.proximos_encuentros{
+.proximos_encuentros {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -326,7 +325,7 @@ main {
   margin-top: 26px;
 }
 
-.proximo_encuentro{
+.proximo_encuentro {
   background-color: #1b1b1b;
   display: flex;
   justify-content: space-between;
@@ -340,11 +339,11 @@ main {
   min-width: 300px;
 }
 
-.proximo_encuentro:hover{
+.proximo_encuentro:hover {
   transform: scale(1.1);
 }
 
-.proximo_encuentro_info{
+.proximo_encuentro_info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -352,7 +351,7 @@ main {
   gap: 20px;
 }
 
-.team_info{
+.team_info {
   width: 150px;
   display: flex;
   align-items: center;
@@ -360,24 +359,22 @@ main {
   gap: 10px;
 }
 
-.team_content_name{
+.team_content_name {
   text-align: center;
 }
 
-.team_info img{
+.team_info img {
   width: 50px;
   height: 50px;
 }
 
-.proximo_encuentro_fecha p{
- font-weight: bold;
+.proximo_encuentro_fecha p {
+  font-weight: bold;
 }
-
-
 
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
 }
@@ -389,6 +386,22 @@ footer a {
   margin: 0 10px;
 }
 
+.footer__content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.arrow-up{
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.arrow-up:hover{
+  transform: scale(1.2);
+}
+
 .github-icon {
   width: 30px;
   height: 30px;
@@ -396,7 +409,7 @@ footer a {
   transition: 0.3s ease-in-out;
 }
 
-.github-icon:hover{
+.github-icon:hover {
   transform: scale(1.2);
 }
 
@@ -410,6 +423,7 @@ footer a {
 
 @media (max-width: 1024px) {
   main {
+    top: 100px;
     padding: 0.75rem;
   }
 
@@ -426,25 +440,46 @@ footer a {
   }
 }
 
-@media (max-width: 768px) {
-  .navbar{
-    display: none;
+@media screen and (max-width: 768px) {
+  .active-header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #08080a;
+    opacity: 0.99;
   }
 
-  .header{
+  .header__title {
+    text-wrap: pretty;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .lista {
+    flex-direction: column;
+    margin-left: 16px;
+  }
+
+  .header {
     padding: 20px;
   }
 
-  .header__title img{
+  .header__title img {
     display: none;
   }
 
-  .menuBtnOpen ,.menuBtnClose{
+  .menuBtnOpen,
+  .menuBtnClose {
     margin-top: 8px;
     margin-right: 8px;
   }
 
-  .menuBtnOpen{
+  .menuBtnOpen {
     display: block;
   }
 
@@ -456,49 +491,46 @@ footer a {
     margin-right: 0px;
     width: 100%;
   }
-  .secction__table{
+  .secction__table {
     border-radius: 10px;
     width: 100%;
     background-color: #0f1013;
   }
-  
+
   /*quita los estilos hover*/
   .button:not(.button-active):hover {
     background: #888888;
     color: #3b3b3b;
     animation: 0.3s ease-in-out;
     transform: scale(1);
-    cursor: pointer; 
+    cursor: pointer;
   }
-
 
   .secction__table th:nth-child(7),
   .secction__table th:nth-child(8),
   .secction__table td:nth-child(7),
-  .secction__table td:nth-child(8){
+  .secction__table td:nth-child(8) {
     display: none;
   }
- 
-
 }
 
-@media (max-width:640px) {
-  .header__title img{
+@media (max-width: 640px) {
+  .header__title img {
     display: none;
   }
 
-  .botones{
+  .botones {
     gap: 9px;
   }
 
-  .jornadas_button span{
+  .jornadas_button span {
     font-size: 13px;
   }
-  .clasificiacion{
+  .clasificiacion {
     width: 100%;
   }
-  
-  .secction__table{
+
+  .secction__table {
     border-radius: 10px;
   }
 
@@ -510,13 +542,13 @@ footer a {
   .secction__table td:nth-child(5),
   .secction__table td:nth-child(6),
   .secction__table td:nth-child(7),
-  .secction__table td:nth-child(8){
+  .secction__table td:nth-child(8) {
     display: none;
-  } 
+  }
 }
 
-@media screen and (max-width:395px){
-  .jornadas_button span{
+@media screen and (max-width: 395px) {
+  .jornadas_button span {
     font-size: 12px;
   }
 
@@ -529,9 +561,32 @@ footer a {
   .secction__table td:nth-child(5),
   .secction__table td:nth-child(6),
   .secction__table td:nth-child(7),
-  .secction__table td:nth-child(8){
+  .secction__table td:nth-child(8) {
     display: none;
-  } 
+  }
+}
+/*de arriba hacia abajo*/
+
+.header.active-header .navbar {
+  display: flex;
+  animation: openMenu 0.5s forwards;
 }
 
 
+@keyframes openMenu {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes closeMenu {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
