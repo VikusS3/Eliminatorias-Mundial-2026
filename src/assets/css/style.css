@@ -372,33 +372,33 @@ main {
   font-weight: bold;
 }
 
-footer {
+.footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
 }
 
-footer a {
+.footer a {
   text-decoration: none;
   color: #f6f6f6;
   font-size: 20px;
   margin: 0 10px;
 }
 
-.footer__content{
+.footer__content {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
-.arrow-up{
+.arrow-up {
   transition: 0.3s ease-in-out;
   cursor: pointer;
 }
 
-.arrow-up:hover{
+.arrow-up:hover {
   transform: scale(1.2);
 }
 
@@ -411,6 +411,57 @@ footer a {
 
 .github-icon:hover {
   transform: scale(1.2);
+}
+
+/** ========================================================================== **/
+/** CSS PARA LA PAGINA GOLEADORES **/
+.header_goleadores {
+  padding: 20px 0;
+}
+
+.seccion_goleadores {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.seccion_goleadores div {
+  background-color: #3c3b6e;
+  width: 300px;
+  height: 150px;
+}
+
+.div1 {
+  grid-area: 3 / 9 / 5 / 13;
+}
+.div2 {
+  grid-area: 1 / 7 / 3 / 11;
+}
+.div3 {
+  grid-area: 3 / 5 / 5 / 9;
+}
+.div4 {
+  grid-area: 5 / 3 / 7 / 7;
+}
+.div5 {
+  grid-area: 5 / 11 / 7 / 15;
+}
+.div6 {
+  grid-area: 5 / 7 / 7 / 11;
+}
+.div7 {
+  grid-area: 7 / 1 / 9 / 5;
+}
+.div8 {
+  grid-area: 7 / 5 / 9 / 9;
+}
+.div9 {
+  grid-area: 7 / 9 / 9 / 13;
+}
+.div10 {
+  grid-area: 7 / 13 / 9 / 17;
 }
 
 /** media querys**/
@@ -571,7 +622,6 @@ footer a {
   display: flex;
   animation: openMenu 0.5s forwards;
 }
-
 
 @keyframes openMenu {
   0% {
