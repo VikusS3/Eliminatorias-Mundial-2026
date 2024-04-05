@@ -175,70 +175,30 @@ async function getResults() {
 }
 
 function displayMatches(jornada) {
-  const jornadaPartido = document.getElementById("jornada_partido");
+  let html = '';
 
-  // Clear existing content
-  jornadaPartido.innerHTML = "";
-
-  // Iterar sobre cada partido de la jornada
   jornada.forEach((partido) => {
-    // Crear elementos HTML con los datos del partido
-    const partidoDiv = document.createElement("div");
-    partidoDiv.classList.add("partido");
-
-    const encuentroDiv = document.createElement("div");
-    encuentroDiv.classList.add("encuentro");
-
-    const team1 = document.createElement("p");
-    team1.id = "team-1";
-    team1.textContent = partido.first_team.country;
-
-    // Create flag for first team
-    const flag1 = document.createElement("img");
-    flag1.loading = "lazy";
-    flag1.src = `assets/public/${partido.first_team.country.toLowerCase()}.png`;
-    flag1.alt = partido.first_team.country + " flag";
-    flag1.classList.add("flag");
-
-    const golesDiv = document.createElement("div");
-    golesDiv.classList.add("goles");
-
-    const golesTeam1 = document.createElement("p");
-    golesTeam1.textContent = partido.first_team.goals;
-
-    const separator = document.createElement("span");
-    separator.textContent = ":";
-
-    const golesTeam2 = document.createElement("p");
-    golesTeam2.textContent = partido.second_team.goals;
-
-    const team2 = document.createElement("p");
-    team2.id = "team-2";
-    team2.textContent = partido.second_team.country;
-
-    // Create flag for second team
-    const flag2 = document.createElement("img");
-    flag2.loading = "lazy";
-    flag2.src = `./assets/public/${partido.second_team.country.toLowerCase()}.png`;
-    flag2.alt = partido.second_team.country + " flag";
-    flag2.classList.add("flag");
-
-    const fechaDiv = document.createElement("div");
-    fechaDiv.classList.add("fecha");
-
-    const fechaP = document.createElement("p");
-    fechaP.innerHTML = `Fecha:<span> ${new Date(
-      partido.date
-    ).toLocaleDateString()}</span>`;
-
-    // Agregar elementos al DOM
-    golesDiv.append(golesTeam1, separator, golesTeam2);
-    encuentroDiv.append(flag1, team1, golesDiv, team2, flag2);
-    fechaDiv.appendChild(fechaP);
-    partidoDiv.append(encuentroDiv, fechaDiv);
-
-    jornadaPartido.appendChild(partidoDiv);
+    html += `
+      <div class="partido">
+        <div class="encuentro">
+          <img class="flag" loading="lazy" src="assets/public/${partido.first_team.country.toLowerCase()}.png" alt="${partido.first_team.country} flag">
+          <p id="team-1">${partido.first_team.country}</p>
+          <div class="goles">
+            <p>${partido.first_team.goals}</p>
+            <span>:</span>
+            <p>${partido.second_team.goals}</p>
+          </div>
+          <p id="team-2">${partido.second_team.country}</p>
+          <img class="flag" loading="lazy" src="./assets/public/${partido.second_team.country.toLowerCase()}.png" alt="${partido.second_team.country} flag">
+        </div>
+        <div class="fecha">
+          <p>Fecha:<span> ${new Date(partido.date).toLocaleDateString()}</span></p>
+        </div>
+      </div>
+    `;
   });
+
+  document.getElementById("jornada_partido").innerHTML = html;
 }
 
 async function getPartidos() {
@@ -273,83 +233,37 @@ async function getPartidos() {
 }
 
 function displayMatchesProx(jornada) {
-  const proximos_encuentros = document.getElementById("proximos_encuentros");
-
-  // Clear existing content
-  proximos_encuentros.innerHTML = "";
+  let html = '';
 
   // Iterate over each match of the jornada
   jornada.forEach((partido) => {
-    const encuentro = document.createElement("div");
-    encuentro.className = "proximo_encuentro";
-
-    const encuentroInfo = document.createElement("div");
-    encuentroInfo.className = "proximo_encuentro_info";
-
-    const team1Info = document.createElement("div");
-    team1Info.className = "team_info";
-
-    const team1Img = document.createElement("div");
-    team1Img.className = "team_info_img";
-
-    const team1Flag = document.createElement("img");
-    team1Flag.loading = "lazy";
-    team1Flag.src = `assets/public/${partido.first_team.toLowerCase()}.png`;
-    team1Flag.alt = `Bandera de ${partido.first_team}`;
-
-    const teamContentName = document.createElement("div");
-    teamContentName.className = "team_content_name";
-
-    const team1Name = document.createElement("h3");
-    team1Name.id = "equipo_1";
-    team1Name.textContent = partido.first_team;
-
-    team1Img.appendChild(team1Flag);
-    team1Info.appendChild(team1Img);
-    teamContentName.appendChild(team1Name);
-    team1Info.appendChild(teamContentName);
-
-    const team2Info = document.createElement("div");
-    team2Info.className = "team_info";
-
-    const team2Img = document.createElement("div");
-    team2Img.className = "team_info_img";
-
-    const team2Flag = document.createElement("img");
-    team2Flag.loading = "lazy";
-    team2Flag.src = `assets/public/${partido.second_team.toLowerCase()}.png`;
-    team2Flag.alt = `Bandera de ${partido.second_team}`;
-
-    const teamContentName2 = document.createElement("div");
-    teamContentName2.className = "team_content_name";
-
-    const team2Name = document.createElement("h3");
-    team2Name.id = "equipo_2";
-    team2Name.textContent = partido.second_team;
-
-    team2Img.appendChild(team2Flag);
-    team2Info.appendChild(team2Img);
-    teamContentName2.appendChild(team2Name);
-    team2Info.appendChild(teamContentName2);
-
-    encuentroInfo.appendChild(team1Info);
-    encuentroInfo.appendChild(team2Info);
-
-    const encuentroFecha = document.createElement("div");
-    encuentroFecha.className = "proximo_encuentro_fecha";
-
-    const fechaEncuentro = document.createElement("p");
-    fechaEncuentro.id = "fecha_encuentro_proximo";
-    fechaEncuentro.textContent = `Fecha: ${new Date(
-      partido.date
-    ).toLocaleDateString()}`;
-
-    encuentroFecha.appendChild(fechaEncuentro);
-
-    encuentro.appendChild(encuentroInfo);
-    encuentro.appendChild(encuentroFecha);
-
-    proximos_encuentros.appendChild(encuentro);
+    html += `
+      <div class="proximo_encuentro">
+        <div class="proximo_encuentro_info">
+          <div class="team_info">
+            <div class="team_info_img">
+              <img loading="lazy" src="assets/public/${partido.first_team.toLowerCase()}.png" alt="Bandera de ${partido.first_team}">
+            </div>
+            <div class="team_content_name">
+              <h3 id="equipo_1">${partido.first_team}</h3>
+            </div>
+          </div>
+          <div class="team_info">
+            <div class="team_info_img">
+              <img loading="lazy" src="assets/public/${partido.second_team.toLowerCase()}.png" alt="Bandera de ${partido.second_team}">
+            </div>
+            <div class="team_content_name">
+              <h3 id="equipo_2">${partido.second_team}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="proximo_encuentro_fecha">
+          <p id="fecha_encuentro_proximo">Fecha: ${new Date(partido.date).toLocaleDateString()}</p>
+        </div>
+      </div>
+    `;
   });
+
+  document.getElementById("proximos_encuentros").innerHTML = html;
 }
 

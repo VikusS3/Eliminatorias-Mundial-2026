@@ -1,0 +1,54 @@
+{
+  "goleadores": [
+    {
+      "jugador": "D. Núñez",
+      "goles": 5,
+      "pais": "uruguay"
+    },
+    {
+      "jugador": "L. Messi",
+      "goles": 3,
+      "pais": "argentina"
+    },
+    {
+      "jugador": "N. De La Cruz",
+      "goles": 3,
+      "pais": "uruguay"
+    },
+    {
+      "jugador": "S. Rondón",
+      "goles": 2,
+      "pais": "venezuela"
+    },
+    {
+      "jugador": "R. S. Borré",
+      "goles": 2,
+      "pais": "colombia"
+    },
+    {
+      "jugador": "Neymar",
+      "goles": 2,
+      "pais": "brasil"
+    },
+    {
+      "jugador": "Rodrygo",
+      "goles": 2,
+      "pais": "brasil"
+    },
+    {
+      "jugador": "F. Torres",
+      "goles": 2,
+      "pais": "ecuador"
+    },
+    {
+      "jugador": "N. Otamendi",
+      "goles": 2,
+      "pais": "argentina"
+    },
+    {
+      "jugador": "L. Díaz",
+      "goles": 2,
+      "pais": "colombia"
+    }
+  ]
+}
