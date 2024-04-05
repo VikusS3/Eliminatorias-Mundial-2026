@@ -1,0 +1,399 @@
+
+/** CSS PARA LA PAGINA GOLEADORES **/
+.header_goleadores {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.arrow-back {
+  margin-top: 6px;
+  transition: 0.3s ease-in-out;
+}
+
+.arrow-back:hover {
+  transform: scale(1.2);
+}
+
+.arrow-back a {
+  color: #f6f6f6;
+}
+
+.seccion_goleadores {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.seccion_goleadores div {
+  width: 300px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  gap: 10px;
+}
+
+.goles {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.goleador1 {
+  grid-area: 1 / 7 / 3 / 11;
+}
+.goleador2 {
+  grid-area: 3 / 5 / 5 / 9;
+}
+.goleador3 {
+  grid-area: 3 / 9 / 5 / 13;
+}
+.goleador4 {
+  grid-area: 5 / 3 / 7 / 7;
+}
+.goleador5 {
+  grid-area: 5 / 7 / 7 / 11;
+}
+.goleador6 {
+  grid-area: 5 / 11 / 7 / 15;
+}
+.goleador7 {
+  grid-area: 7 / 1 / 9 / 5;
+}
+.goleador8 {
+  grid-area: 7 / 5 / 9 / 9;
+}
+.goleador9 {
+  grid-area: 7 / 9 / 9 / 13;
+}
+.goleador10 {
+  grid-area: 7 / 13 / 9 / 17;
+}
+
+/*Color de banderas de paises*/
+.argentina {
+  background: linear-gradient(to right, #75aadb, #0033a0);
+}
+
+.brasil {
+  background: linear-gradient(to right, #009b3a, #fedf00);
+}
+
+.chile {
+  background: linear-gradient(to right, #d52b1e, #ffffff, #0033a0);
+}
+
+.colombia {
+  background: linear-gradient(to right, #ffda00, #003893, #ce1126);
+}
+
+.peru {
+  background: linear-gradient(to right, #de2110, #ffffff, #da1e3c);
+}
+
+.ecuador {
+  background: linear-gradient(to right, #fcd116, #ef3340);
+}
+
+.bolivia {
+  background: linear-gradient(to right, #d52b1e, #fcd20f, #007a4d);
+}
+
+.uruguay {
+  background: linear-gradient(to right, #0038a8, #ffffff);
+}
+
+.venezuela {
+  background: linear-gradient(to right, #ffd520, #cf142b, #00247d);
+}
+
+.paraguay {
+  background: linear-gradient(to right, #00308f, #ffffff, #d52b1e);
+}
+
+/** media querys**/
+
+@media (max-width: 1280px) {
+  .navbar {
+    margin-right: 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    top: 100px;
+    padding: 0.75rem;
+  }
+
+  .secction__table {
+    margin-right: 10px;
+  }
+
+  .secction__table thead tr th {
+    width: 100px;
+  }
+
+  .secction__table tbody tr td:nth-child(2) {
+    width: 125px;
+  }
+
+  .seccion_goleadores {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+  }
+
+  .goleador1 {
+    grid-area: 1 / 2 / 3 / 4;
+  }
+  .goleador2 {
+    grid-area: 3 / 1 / 5 / 3;
+  }
+  .goleador3 {
+    grid-area: 3 / 3 / 5 / 5;
+  }
+  .goleador4 {
+    grid-area: 5 / 1 / 7 / 3;
+  }
+  .goleador5 {
+    grid-area: 5 / 3 / 7 / 5;
+  }
+  .goleador6 {
+    grid-area: 7 / 1 / 9 / 3;
+  }
+  .goleador7 {
+    grid-area: 7 / 3 / 9 / 5;
+  }
+  .goleador8 {
+    grid-area: 9 / 1 / 11 / 3;
+  }
+  .goleador9 {
+    grid-area: 9 / 3 / 11 / 5;
+  }
+  .goleador10 {
+    grid-area: 11 / 2 / 13 / 4;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .active-header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #08080a;
+    opacity: 0.99;
+  }
+
+  .header_goleadores {
+    padding: 20px;
+  }
+
+  .header_goleadores h1 {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .seccion_goleadores{
+    margin-right: auto;
+  }
+
+  .header__title {
+    text-wrap: pretty;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .lista {
+    flex-direction: column;
+    margin-left: 16px;
+  }
+
+  .header {
+    padding: 20px;
+  }
+
+  .header__title img {
+    display: none;
+  }
+
+  .menuBtnOpen,
+  .menuBtnClose {
+    margin-top: 8px;
+    margin-right: 8px;
+  }
+
+  .menuBtnOpen {
+    display: block;
+  }
+
+  .main__title {
+    text-align: center;
+  }
+
+  .secction__table {
+    margin-right: 0px;
+    width: 100%;
+  }
+  .secction__table {
+    border-radius: 10px;
+    width: 100%;
+    background-color: #0f1013;
+  }
+
+  /*quita los estilos hover*/
+  .button:not(.button-active):hover {
+    background: #888888;
+    color: #3b3b3b;
+    animation: 0.3s ease-in-out;
+    transform: scale(1);
+    cursor: pointer;
+  }
+
+  .secction__table th:nth-child(7),
+  .secction__table th:nth-child(8),
+  .secction__table td:nth-child(7),
+  .secction__table td:nth-child(8) {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .header__title img {
+    display: none;
+  }
+
+  .botones {
+    gap: 9px;
+  }
+
+  .jornadas_button span {
+    font-size: 13px;
+  }
+  .clasificiacion {
+    width: 100%;
+  }
+
+  .secction__table {
+    border-radius: 10px;
+  }
+
+  /*ocultar las columnas 5,6,7,8 de la tabla*/
+  .secction__table th:nth-child(5),
+  .secction__table th:nth-child(6),
+  .secction__table th:nth-child(7),
+  .secction__table th:nth-child(8),
+  .secction__table td:nth-child(5),
+  .secction__table td:nth-child(6),
+  .secction__table td:nth-child(7),
+  .secction__table td:nth-child(8) {
+    display: none;
+  }
+
+  .header_goleadores{
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .seccion_goleadores {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
+    grid-row-gap: 30px;
+  }
+
+  .goleador1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .goleador2 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .goleador3 {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .goleador4 {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  .goleador5 {
+    grid-area: 5 / 1 / 6 / 2;
+  }
+  .goleador6 {
+    grid-area: 6 / 1 / 7 / 2;
+  }
+  .goleador7 {
+    grid-area: 7 / 1 / 8 / 2;
+  }
+  .goleador8 {
+    grid-area: 8 / 1 / 9 / 2;
+  }
+  .goleador9 {
+    grid-area: 9 / 1 / 10 / 2;
+  }
+  .goleador10 {
+    grid-area: 10 / 1 / 11 / 2;
+  }
+}
+
+@media screen and (max-width: 395px) {
+  .jornadas_button span {
+    font-size: 12px;
+  }
+
+  .secction__table th:nth-child(4),
+  .secction__table th:nth-child(5),
+  .secction__table th:nth-child(6),
+  .secction__table th:nth-child(7),
+  .secction__table th:nth-child(8),
+  .secction__table td:nth-child(4),
+  .secction__table td:nth-child(5),
+  .secction__table td:nth-child(6),
+  .secction__table td:nth-child(7),
+  .secction__table td:nth-child(8) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .seccion_goleadores{
+    margin-right: auto;
+  }
+}
+/*de arriba hacia abajo*/
+
+.header.active-header .navbar {
+  display: flex;
+  animation: openMenu 0.5s forwards;
+}
+
+@keyframes openMenu {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes closeMenu {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
