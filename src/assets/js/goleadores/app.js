@@ -14,7 +14,6 @@ async function getGoleadores() {
   try {
     const response = await fetch("../assets/js/goleadores/goleadores.json");
     const data = await response.json();
-    console.log(data.goleadores);
     createDivs(data.goleadores);
   } catch (error) {
     console.log(error);

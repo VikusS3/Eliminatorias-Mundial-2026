@@ -1,5 +1,102 @@
 
 /** CSS PARA LA PAGINA GOLEADORES **/
+
+.argentina {
+  background: linear-gradient(to right, #75aadb, #0033a0);
+}
+
+.brasil {
+  background: linear-gradient(to right, #009b3a, #fedf00);
+}
+
+.chile {
+  background: linear-gradient(to right, #d52b1e, #ffffff, #0033a0);
+}
+
+.colombia {
+  background: linear-gradient(to right, #ffda00, #003893, #ce1126);
+}
+
+.peru {
+  background: linear-gradient(to right, #de2110, #ffffff, #da1e3c);
+}
+
+.ecuador {
+  background: linear-gradient(to right, #fcd116, #ef3340);
+}
+
+.bolivia {
+  background: linear-gradient(to right, #d52b1e, #fcd20f, #007a4d);
+}
+
+.uruguay {
+  background: linear-gradient(to right, #0038a8, #ffffff);
+}
+
+.venezuela {
+  background: linear-gradient(to right, #ffd520, #cf142b, #00247d);
+}
+
+.paraguay {
+  background: linear-gradient(to right, #00308f, #ffffff, #d52b1e);
+}
+
+.seccion_goleadores {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.seccion_goleadores div {
+  width: 300px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  gap: 10px;
+}
+
+.goles {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.goleador1 {
+  grid-area: 1 / 7 / 3 / 11;
+}
+.goleador2 {
+  grid-area: 3 / 5 / 5 / 9;
+}
+.goleador3 {
+  grid-area: 3 / 9 / 5 / 13;
+}
+.goleador4 {
+  grid-area: 5 / 3 / 7 / 7;
+}
+.goleador5 {
+  grid-area: 5 / 7 / 7 / 11;
+}
+.goleador6 {
+  grid-area: 5 / 11 / 7 / 15;
+}
+.goleador7 {
+  grid-area: 7 / 1 / 9 / 5;
+}
+.goleador8 {
+  grid-area: 7 / 5 / 9 / 9;
+}
+.goleador9 {
+  grid-area: 7 / 9 / 9 / 13;
+}
+.goleador10 {
+  grid-area: 7 / 13 / 9 / 17;
+}
+
 .header_goleadores {
   padding: 20px 0;
   display: flex;

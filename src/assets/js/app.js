@@ -70,12 +70,12 @@ buttons.forEach((button, index) => {
       }
     });
 
-    [btns, btnsProxJornada].forEach(btnGroup => {
-      btnGroup.forEach((btn, i) => {
-        const element = document.getElementById(btn);
-        element.classList[i === 0 ? 'add' : 'remove']("active");
-      });
-    });
+    // [btns, btnsProxJornada].forEach(btnGroup => {
+    //   btnGroup.forEach((btn, i) => {
+    //     const element = document.getElementById(btn);
+    //     element.classList[i === 0 ? 'add' : 'remove']("active");
+    //   });
+    // });
 
     functions[index]();
   });
@@ -149,11 +149,11 @@ async function getResults() {
     const data = await response.json();
 
     const jornadas = Object.keys(data);
-
     jornada_numbers.forEach((id, index) => {
       const element = document.getElementById(id);
       element.textContent = jornadas[index];
     });
+
 
     btns.forEach((id, index) => {
       const btn = document.getElementById(id);
@@ -166,9 +166,10 @@ async function getResults() {
         const jornada = data[jornadas[index]];
         displayMatches(jornada);
       });
+     
     });
-
-    displayMatches(data[jornadas[0]]);
+    
+    //displayMatches(data[jornadas[0]]);
   } catch (error) {
     console.log(error);
   }
@@ -226,7 +227,7 @@ async function getPartidos() {
       });
     });
 
-    displayMatchesProx(data[prox_jornadas[0]]);
+   //displayMatchesProx(data[prox_jornadas[0]]);
   } catch (error) {
     console.log(error);
   }
